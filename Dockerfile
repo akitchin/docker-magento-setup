@@ -8,7 +8,7 @@ RUN /etc/init.d/mysql start && cd /usr/local/magento2 && sudo -u www-data php bi
 
 RUN /etc/init.d/mysql start && cd /usr/local/magento2 && sudo -u www-data php bin/magento indexer:reindex && /etc/init.d/mysql stop
 
-RUN sed -i 's/memory_limit = .*/memory_limit = 128M/' /etc/php5/apache2/php.ini
+RUN sed -i 's/memory_limit = .*/memory_limit = 128M/' /etc/php/7.0/apache2/php.ini
 
 #Debugging only (not for production)
 RUN mv /usr/local/magento2/pub/errors/local.xml.sample /usr/local/magento2/pub/errors/local.xml
