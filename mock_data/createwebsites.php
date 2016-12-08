@@ -14,8 +14,8 @@ try {
      
     $results = createWebsite($objectManager,$argv[2]);
     $_website = $results[0];
-    $_website = $results[1];
-    $_website = $results[2];
+    $_store = $results[1];
+    $_store_view = $results[2];
 
     $_product = createProduct($objectManager,$_website->getId(), $_store_view->getId());
 
