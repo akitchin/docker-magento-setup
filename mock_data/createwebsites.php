@@ -1,6 +1,6 @@
 <?php
 include('app/bootstrap.php');
-include(‘createcommon.php’);
+include('createcommon.php');
 
 use Magento\Framework\App\Bootstrap;
 
@@ -12,12 +12,12 @@ $state->setAreaCode('frontend');
 
 try {
      
-    $results = createWebsite($argv[2]);
+    $results = createWebsite($objectManager,$argv[2]);
     $_website = $results[0];
     $_website = $results[1];
     $_website = $results[2];
 
-    $_product = createProduct($_website->getId(), $_store_view->getId());
+    $_product = createProduct($objectManager,$_website->getId(), $_store_view->getId());
 
     echo "<pre>";
     echo "Success: Website Id: " . $_website->getId();

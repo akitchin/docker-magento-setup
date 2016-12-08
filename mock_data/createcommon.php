@@ -1,6 +1,6 @@
 <?php
 
-function createWebsite($code) {
+function createWebsite($objectManager,$code) {
     $_website = $objectManager->create('Magento\Store\Model\Website');
     $_store = $objectManager->create('Magento\Store\Model\Group');
     $_store_view = $objectManager->create('Magento\Store\Model\Store');
@@ -16,7 +16,7 @@ function createWebsite($code) {
     return array($_website, $_store, $_store_view);
 }
 
-function createProduct($websiteId,$storeId) {
+function createProduct($objectManager,$websiteId,$storeId) {
     $_product = $objectManager->create('Magento\Catalog\Model\Product');
     $_productImages = $objectManager->create('Magento\CatalogImportExport\Model\Import\Product');
 
